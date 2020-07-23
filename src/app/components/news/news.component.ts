@@ -1,19 +1,17 @@
 import {Component , OnInit} from '@angular/core';
 import { NewsService }  from '../../services/news_service.service';
-import { NewsList } from '../../interfaces/interface'
+import { NewsList, Some } from '../../interfaces/interface'
 @Component({
     selector: 'app-news',
     templateUrl: './news.component.html',
     styleUrls: ['./news.component.scss']
 })
-
-
  export class NewsComponent implements OnInit {
 
     newsList: Array<NewsList>;
     pageSlice: Array<object>;
     searchTitle: string = '';
-    searchValue: string;
+    searchValue: string = '';
     constructor( private _newsService: NewsService)  {
      }
     
@@ -37,7 +35,7 @@ import { NewsList } from '../../interfaces/interface'
             this.newsList =  response.articles;
             this.pageSlice = this.newsList.slice(0,9);
         })
-        this.searchTitle = localStorage.getItem('Search-value');
+       this.searchTitle = localStorage.getItem('Search-value');
     }
    
  }

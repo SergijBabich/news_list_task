@@ -1,18 +1,26 @@
 export interface NewsList {
     author: string, 
-    content: string,
+    content?: string,
     description: string
-    publishedAt:string,
+    publishedAt?:string,
     source: object , 
     title:string,
-    url:string , 
-    urlToImage:string,
+    url?:string , 
+    urlToImage?:string,
 
 }
 
 export interface NewsPage {
     title:string,
     publishedAt:string,
-    urlToImage:string,
+    urlToImage?:string,
     description: string
   }
+
+  export interface Some {
+    articles:object,
+    status:string,
+    totalResults: number
+
+  }
+  

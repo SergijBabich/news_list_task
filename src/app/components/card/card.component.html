@@ -3,7 +3,7 @@
        <mat-card-title>{{newsList?.title}}</mat-card-title>
        <mat-card-subtitle>{{newsList?.publishedAt}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image (click) ="onSelect(iterResponse)" class="header-image " [src]="newsList?.urlToImage" alt="picture is not available">  
+    <img mat-card-image (click) ="onSelect(iterResponse)" class="header-image" [src]="newsList?.urlToImage" alt="picture is not available">  
     <mat-card-content>
        <p>{{newsList?.description}}</p>
     </mat-card-content>

@@ -12,7 +12,7 @@ import { NewsList } from '../../interfaces/interface'
 
 export class NewsPageComponent implements OnInit {
 
-  public selectedNews: NewsList;
+  public selectedNews: Object;
   
   constructor( private route: ActivatedRoute, 
                private _newsPageService: ShowNewsDataService  ) { }

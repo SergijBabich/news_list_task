@@ -8,7 +8,7 @@ import { NewsList, Some } from '../../interfaces/interface'
 })
  export class NewsComponent implements OnInit {
 
-    newsList: Array<NewsList>;
+    newsList: any;
     pageSlice: Array<object>;
     searchTitle: string = '';
     searchValue: string = '';
@@ -32,8 +32,8 @@ import { NewsList, Some } from '../../interfaces/interface'
     ngOnInit(): void {
       this._newsService.getAllNews()
         .subscribe((response) => { 
-            this.newsList =  response.articles;
-            this.pageSlice = this.newsList.slice(0,9);
+            this.newsList =  response;
+            this.pageSlice = this.newsList.articles.slice(0,9);
         })
        this.searchTitle = localStorage.getItem('Search-value');
     }

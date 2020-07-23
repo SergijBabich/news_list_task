@@ -1,0 +1,15 @@
+<div class="page-container">
+    <div class="page-container__button">
+       <button  routerLink = "/" mat-raised-button color="primary">К списку новостей  </button>
+    </div>
+    <mat-card  *ngIf="selectedNews"   class="page-container__news" >
+       <mat-card-header>
+          <mat-card-title>{{selectedNews.title}}</mat-card-title>
+          <mat-card-subtitle>{{selectedNews?.publishedAt}}</mat-card-subtitle>
+       </mat-card-header>
+       <img mat-card-image class="header-image " [src]="selectedNews.urlToImage" alt="picture is not available">  
+       <mat-card-content>
+          <p>{{selectedNews.description}}</p>
+       </mat-card-content>
+    </mat-card>
+ </div>

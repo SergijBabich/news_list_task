@@ -9,7 +9,7 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
 })
  export class NewsComponent implements OnInit {
 
-    public newsList: Array<object>;
+    public newsList:Array<object>;
     public pageSlice: Array<object>;
     public searchTitle: string;
     public searchValue: string;
@@ -29,14 +29,16 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
         localStorage.setItem('Search-value', this.searchTitle);
         this.searchTitle = localStorage.getItem('Search-value');
     }
-  
+
+
     ngOnInit(): void {
-      this._newsService.getAllNews()
+     this._newsService.getAllNews()
         .subscribe((response:Response) => { 
-            this.newsList =  response.articles;
+            this.newsList = response.articles;
+
             this.pageSlice = this.newsList.slice(0,9);
         })
-        localStorage.getItem('Search-value')===null? this.searchTitle = ' ': this.searchTitle = localStorage.getItem('Search-value') ;
+        localStorage.getItem('Search-value')===null? this.searchTitle = '': this.searchTitle = localStorage.getItem('Search-value') ;
     }
    
  }

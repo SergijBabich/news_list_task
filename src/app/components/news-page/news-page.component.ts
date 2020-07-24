@@ -12,7 +12,7 @@ import { NewsList } from '../../interfaces/interfaces';
 
 export class NewsPageComponent implements OnInit {
 
-  public selectedNews: NewsList;
+  public selectedNews: Object;
   
   constructor( private route: ActivatedRoute, 
                private _newsPageService: ShowNewsDataService  ) { }
@@ -21,7 +21,7 @@ export class NewsPageComponent implements OnInit {
 
   ngOnInit(): void {
     let title: string = this.route.snapshot.paramMap.get("title")
-    this._newsPageService.selectedPage$.subscribe((newsData: NewsList) => {
+    this._newsPageService.selectedPage$.subscribe((newsData:NewsList) => {
       this.selectedNews = newsData;
     });
   }

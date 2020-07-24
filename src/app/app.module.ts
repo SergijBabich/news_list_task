@@ -4,14 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { CardComponent } from './components/card/card.component';
 import { MaterialModule } from './material/material.module';
 import { NewsService } from './services/news_service.service';
 import { NewsPageComponent } from './components/news-page/news-page.component';
 import { ShowNewsDataService } from './services/news_page_service.service';
 import { FormsModule } from '@angular/forms';
-import { SearchPipe } from './pipe/search.pipe'
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { SearchPipe } from './pipe/search.pipe'
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientJsonpModule
     
   ],
   providers: [NewsService, ShowNewsDataService],

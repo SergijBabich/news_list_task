@@ -23,4 +23,9 @@ export interface NewsPage {
     totalResults: number
 
   }
+  export interface Response {
+    articles: Array<object>,
+    status: string,
+    totalResults: number 
+}
   

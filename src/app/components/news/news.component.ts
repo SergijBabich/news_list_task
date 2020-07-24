@@ -1,6 +1,7 @@
 import {Component , OnInit} from '@angular/core';
 import { NewsService }  from '../../services/news_service.service';
-import { NewsList, Some } from '../../interfaces/interface'
+import { NewsList, Some, Response } from '../../interfaces/interfaces'
+
 @Component({
     selector: 'app-news',
     templateUrl: './news.component.html',
@@ -8,14 +9,15 @@ import { NewsList, Some } from '../../interfaces/interface'
 })
  export class NewsComponent implements OnInit {
 
-    newsList: any = [];
-    pageSlice: Array<object>;
-    searchTitle: string = '';
-    searchValue: string = '';
+    public newsList: Array<object>;
+    public pageSlice: Array<object>;
+    public searchTitle: string;
+    public searchValue: string;
     constructor( private _newsService: NewsService)  {
      }
     
-    OnPageChange(event): void {
+    OnPageChange(event) {
+        console.log(event.pageSize)
         const startIndex = event.pageIndex + event.pageSize;
         let endIndex = startIndex + event.pageSize;
         if (endIndex > this.newsList.length) {
@@ -31,9 +33,9 @@ import { NewsList, Some } from '../../interfaces/interface'
   
     ngOnInit(): void {
       this._newsService.getAllNews()
-        .subscribe((response) => { 
-            this.newsList =  response;
-            this.pageSlice = this.newsList.articles.slice(0,9);
+        .subscribe((response:Response) => { 
+            this.newsList =  response.articles;
+            this.pageSlice = this.newsList.slice(0,9);
         })
        this.searchTitle = localStorage.getItem('Search-value');
     }

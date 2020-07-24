@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShowNewsDataService } from '../../services/news_page_service.service'
-import { NewsPage } from '../../interfaces/interface'
+import { NewsPage } from '../../interfaces/interfaces'
 
 @Component({
   selector: 'app-card',

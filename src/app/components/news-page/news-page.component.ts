@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ShowNewsDataService } from '../../services/news_page_service.service'
-import { NewsList } from '../../interfaces/interface'
+import { NewsList } from '../../interfaces/interfaces';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { NewsList } from '../../interfaces/interface'
 
 export class NewsPageComponent implements OnInit {
 
-  public selectedNews: Object;
+  public selectedNews: NewsList;
   
   constructor( private route: ActivatedRoute, 
                private _newsPageService: ShowNewsDataService  ) { }
@@ -21,7 +21,7 @@ export class NewsPageComponent implements OnInit {
 
   ngOnInit(): void {
     let title: string = this.route.snapshot.paramMap.get("title")
-    this._newsPageService.selectedPage$.subscribe(newsData => {
+    this._newsPageService.selectedPage$.subscribe((newsData: NewsList) => {
       this.selectedNews = newsData;
     });
   }

@@ -8,7 +8,7 @@ import { NewsList, Some } from '../../interfaces/interface'
 })
  export class NewsComponent implements OnInit {
 
-    newsList: any;
+    newsList: any = [];
     pageSlice: Array<object>;
     searchTitle: string = '';
     searchValue: string = '';

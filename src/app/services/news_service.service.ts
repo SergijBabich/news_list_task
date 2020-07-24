@@ -5,7 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 @Injectable()
 export class NewsService {
     constructor( private _http: HttpClient) {  } 
-    baseUrl: string = `http://newsapi.org/v2/everything?q=bitcoin&from=2020-06-24&sortBy=publishedAt&apiKey=04900f9029a14dc2abf20de72096ca00`
+    baseUrl: string = `http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=04900f9029a14dc2abf20de72096ca00`
     
       public getAllNews():Observable<object> {
         return this._http.get(this.baseUrl)

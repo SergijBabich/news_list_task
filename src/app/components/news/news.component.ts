@@ -9,10 +9,10 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
 })
  export class NewsComponent implements OnInit {
 
-    public newsList: Array<object> = [];
+    public newsList: Array<object>;
     public pageSlice: Array<object>;
     public searchTitle: string;
-    public searchValue: string = '';
+    public searchValue: string;
     constructor( private _newsService: NewsService)  {
      }
     
@@ -37,7 +37,7 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
             this.newsList =  response.articles;
             this.pageSlice = this.newsList.slice(0,9);
         })
-       this.searchTitle = localStorage.getItem('Search-value');
+        localStorage.getItem('Search-value')===null? this.searchTitle = ' ': this.searchTitle = localStorage.getItem('Search-value') ;
     }
    
  }

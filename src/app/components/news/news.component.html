@@ -1,5 +1,5 @@
 <div class="input-container">
-    <input type="text" #searchBox  id ="search-box" placeholder="search" [value] = 'searchValue' (keyup)="saveSearchQuery(searchBox.value)" [(ngModel)] = "searchTitle" >
+    <input type="text" #searchBox  id ="search-box" placeholder="search" [value] = 'searchValue' (keyup)="saveSearchQuery()" [(ngModel)] = "searchTitle" >
  </div>
  <div class="card-container">
  <app-card  *ngFor="let iterResponse of pageSlice |search:searchTitle" [newsList] = 'iterResponse'>

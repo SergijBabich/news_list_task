@@ -8,10 +8,8 @@ export class NewsService {
     baseUrl: string = `http://newsapi.org/v2/top-headlines?sources=the-next-web,entertainment-weekly&apiKey=04900f9029a14dc2abf20de72096ca00`
     
       public getAllNews():Observable<object> {
-        return this._http.get(this.baseUrl)
-        .pipe(catchError(err => {
-          throw 'error in source. Details: ' + err;
-        }))
+        return this._http.get<Response[]>(this.baseUrl)
+
         
         
   }

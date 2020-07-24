@@ -35,7 +35,6 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
      this._newsService.getAllNews()
         .subscribe((response:Response) => { 
             this.newsList = response.articles;
-
             this.pageSlice = this.newsList.slice(0,9);
         })
         localStorage.getItem('Search-value')===null? this.searchTitle = '': this.searchTitle = localStorage.getItem('Search-value') ;

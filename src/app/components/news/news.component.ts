@@ -9,7 +9,7 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
 })
  export class NewsComponent implements OnInit {
 
-    public newsList: Array<object>;
+    public newsList: Array<object> = [];
     public pageSlice: Array<object>;
     public searchTitle: string;
     public searchValue: string;

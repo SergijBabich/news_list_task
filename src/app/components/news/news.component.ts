@@ -17,7 +17,6 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
      }
     
     OnPageChange(event) {
-        console.log(event.pageSize)
         const startIndex = event.pageIndex + event.pageSize;
         let endIndex = startIndex + event.pageSize;
         if (endIndex > this.newsList.length) {

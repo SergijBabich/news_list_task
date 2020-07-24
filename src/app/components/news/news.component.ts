@@ -12,7 +12,7 @@ import { NewsList, Some, Response } from '../../interfaces/interfaces'
     public newsList: Array<object> = [];
     public pageSlice: Array<object>;
     public searchTitle: string;
-    public searchValue: string;
+    public searchValue: string = '';
     constructor( private _newsService: NewsService)  {
      }
     
